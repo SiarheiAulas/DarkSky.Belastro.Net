@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('horizon')->required();
             $table->string('hills')->required();
             $table->string('transp')->required();
-            $table->string('description')->required();
+            $table->text('description')->required();
 			$table->string('url')->required();
             $table->string('host')->required();
             $table->integer('distance')->nullable();

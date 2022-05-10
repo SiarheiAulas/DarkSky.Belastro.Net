@@ -25,7 +25,7 @@ Route::get('/about', function(){
 
 Route::resource('locations', LocController::class);
 
-Route::get('/dashboard', function () {
+Route::get('/ypevusaby', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 

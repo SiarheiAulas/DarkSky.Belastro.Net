@@ -36,7 +36,7 @@ class LocationRequest extends FormRequest
 			'hills'=>'required|alpha|min:1|max:1',
 			'host'=>'required|alpha|min:2|max:10',
 			'url'=>'required|url',
-			'description'=>'required|min:10|max:1000',
+			'description'=>'required|min:10|max:5000',
 			'mapimg'=>'nullable|file|image|max:512',
 			'pano'=>'nullable|file|image|max:512'
         ];
