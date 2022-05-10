@@ -63,6 +63,18 @@ class LocController extends Controller
 		$location->host=$request->input('host');
 		$location->sqm=$request->input('sqm');
 		
+		$filecontroller=new FileController;
+
+		if($request->hasFile('mapimg')){
+            $location->mapimg=$filecontroller->uploadmap($request);
+            $location->mapimgext=$request->file('mapimg')->extension();
+        }
+        
+		if($request->hasFile('pano')){
+			$location->pano=$filecontroller->uploadpano($request);
+			$location->panoext=$request->file('pano')->extension();
+        }
+        				
 		$location->save();
 		
 		return redirect()->route('locations.index')->withErrors($validated)->withInput();
@@ -77,8 +89,9 @@ class LocController extends Controller
     public function show($id)
     {
         $location=Location::find($id);
-		$url=$location->url;
-		return redirect()->away($url);
+		//$url=$location->url;
+		//return redirect()->away($url);
+		return view('point', compact('location'));
     }
 
     /**
@@ -120,6 +133,18 @@ class LocController extends Controller
 		$location->host=$request->input('host');
 		$location->sqm=$request->input('sqm');
 		
+        $filecontroller=new FileController;
+
+		if($request->hasFile('mapimg')){
+            $location->mapimg=$filecontroller->uploadmap($request);
+            $location->mapimgext=$request->file('mapimg')->extension();
+        }
+        
+		if($request->hasFile('pano')){
+			$location->pano=$filecontroller->uploadpano($request);
+			$location->panoext=$request->file('pano')->extension();
+        }
+        
 		$location->save();
 		
 		return redirect()->route('locations.index')->withErrors($validated)->withInput();

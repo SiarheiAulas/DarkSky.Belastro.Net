@@ -102,11 +102,22 @@
                         });
                     </script>
         			</div>
+					<div class="col-6">
+						<div class="custom-file">
+							<label for="mapimg" class="custom-file-label">Выберите файл изображения карты</label>
+							<input type="file" name="mapimg" id="mapimg" class="custom-file-input">
+						</div>
+						<div class="custom-file">
+							<label for="pano" class="custom-file-label">Выберите файл изображения панорамы</label>
+							<input type="file" name="pano" id="pano" class="custom-file-input">
+						</div>
+					</div>
 					<div class="col-12">
 						<div class="btn-center">
 							<button class="btn btn-primary btn-sm btn-wide", type="submit">Добавить</button>
 						</div>
-					</div>					
+					</div>				
+					
 				</div>
 			</form>
         </div>

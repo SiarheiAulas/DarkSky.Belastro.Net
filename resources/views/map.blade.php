@@ -22,7 +22,7 @@
 					   	@foreach($points as $point)
 							{
 								position: {lat: <?=$point->lat?>, lng: <?=$point->long?>},
-								popupContent:'<div class="title">{{$point->name}}</div><div class="description"><a href="{!!$point->url!!}">Подробнее</a></div>',
+								popupContent:'<div class="title">{{$point->name}}</div><div class="description"><a href="{{Route('locations.show', $point->id)}}">Подробнее</a></div>',
 								title: '{{$point->name}}'
 							},
 						@endforeach
