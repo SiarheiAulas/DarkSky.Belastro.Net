@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\LocController;
+use App\Http\Controllers\OddysController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,8 @@ Route::get('/about', function(){
 })->name('about');
 
 Route::resource('locations', LocController::class);
+
+Route::resource('oddys', OddysController::class);
 
 Route::get('/ypevusaby', function () {
     return view('dashboard');

@@ -7,15 +7,19 @@
                     <li class="contact-panel-item"><a href="https://forum.belastro.net"><img src="{{asset('img/belastro.png')}}" alt="belastro"></a></li>
                 </ul>
             </div>
-            <div class="navbar">
+			@auth()
+				<div class="admin-btn">
+					<a href="{{Route('locations.create')}}"><li class="navlink admin-link">Добавление метки</li></a>
+					<a href="{{Route('oddys.create')}}"><li class="navlink admin-link">Добавление одиссеи</li></a>
+				</div>
+			@endauth
+			<div class="navbar">
                 <ul class="nav">
                     <a href="{{Route('index')}}"><li class="navlink">Главная</li></a>
                     <a href="{{Route('about')}}"><li class="navlink">О проекте</li></a>
                     <a href="https://forum.belastro.net/"><li class="navlink">Форум</li></a>
                     <a href="{{Route('locations.index')}}"><li class="navlink">Список площадок</li></a>
-					@auth()
-						<a href="{{Route('locations.create')}}"><li class="navlink">Добавление метки</li></a>
-					@endauth
+                    <a href="{{Route('oddys.index')}}"><li class="navlink">Одиссеи</li></a>
                 </ul>
             </div>
 </header>
