@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Oddy;
 use App\Models\Location;
+use App\Http\Requests\OddysRequest;
+
 
 class OddysController extends Controller
 {
@@ -36,14 +38,18 @@ class OddysController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OddysRequest $request)
     {
+		$validated=$request->validated();
+		
         $oddy= new Oddy;
 		$oddy->header=$request->input('header');
 		$oddy->url=$request->input('url');
+		$oddy->description=$request->input('description');
 		$oddy->save();
-		return redirect()->back();
-    }
+
+		return redirect()->route('oddys.index')->withErrors($validated)->withInput();
+	}
 
     /**
      * Display the specified resource.
@@ -51,9 +57,9 @@ class OddysController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Oddy $oddy)
     {
-        //
+        return view('oddy', compact('oddy'));
     }
 
     /**
@@ -62,9 +68,9 @@ class OddysController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Oddy $oddy)
     {
-         return 'Страница в разработке';
+         return view('oddyedit', compact('oddy'));
     }
 
     /**
@@ -74,9 +80,17 @@ class OddysController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(OddysRequest $request, Oddy $oddy)
     {
-        //
+    	$validated=$request->validated();
+		
+		$oddy->header=$request->input('header');
+		$oddy->url=$request->input('url');
+		$oddy->description=$request->input('description');
+		$oddy->save();
+		
+		return redirect()->route('oddys.index')->withErrors($validated)->withInput();
+
     }
 
     /**
@@ -85,8 +99,10 @@ class OddysController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Oddy $oddy)
     {
-        //
+        $oddy->delete();
+        return redirect()->route('oddys.index');
+
     }
 }

@@ -19,13 +19,7 @@ return new class extends Migration
             $table->string('name')->required();
             $table->double('lat', 20, 9)->required();
             $table->double('long',20, 8)->required();
-            $table->string('direction')->required();
-            $table->string('lp')->required();
-            $table->string('horizon')->required();
-            $table->string('hills')->required();
-            $table->string('transp')->required();
-            $table->text('description')->required();
-			$table->string('url')->required();
+            $table->longText('description')->required();
             $table->string('host')->required();
             $table->integer('distance')->nullable();
             $table->float('sqm')->nullable();

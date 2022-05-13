@@ -1,7 +1,7 @@
 @extends('layouts.main')
     @section('content')
         <x-header/>
-        <div class="about-page">
+        <div class="about-page bg">
             <div class="about-title">
                 Наблюдательные площадки любителей астрономии Беларуси
             </div>

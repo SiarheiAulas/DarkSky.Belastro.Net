@@ -52,16 +52,33 @@ class LocController extends Controller
 		$location->name=$request->input('name');
 		$location->lat=$request->input('lat');
 		$location->long=$request->input('long');
-		$location->direction=$request->input('direction');
-		$location->lp=$request->input('lp');
-		$location->horizon=$request->input('horizon');
-		$location->hills=$request->input('hills');
-		$location->transp=$request->input('transp');
 		$location->description=$request->input('description');
-		$location->url=$request->input('url');
 		$location->distance=$request->input('distance');
 		$location->host=$request->input('host');
 		$location->sqm=$request->input('sqm');
+		$location->code=$request->input('code');
+		$location->url_gmap=$request->input('url_gmap');
+		$location->url_wiki=$request->input('url_wiki');
+		$location->url_openstr=$request->input('url_openstr');
+		$location->link_ody=$request->input('link_ody');
+		$location->gray=$request->input('gray');
+		$location->lightblue=$request->input('lightblue');
+		$location->blue=$request->input('blue');
+		$location->green=$request->input('green');
+		$location->yellow=$request->input('yellow');
+		$location->orange=$request->input('orange');
+		$location->red=$request->input('red');
+		$location->south=$request->input('south');
+		$location->north=$request->input('north');
+		$location->west=$request->input('west');
+		$location->east=$request->input('east');
+		$location->hills=$request->input('hills');
+		$location->valley=$request->input('valley');
+		$location->plato=$request->input('plato');
+		$location->auto1=$request->input('auto1');
+		$location->auto2=$request->input('auto2');
+		$location->train=$request->input('train');
+		$location->bus=$request->input('bus');
 		
 		$filecontroller=new FileController;
 
@@ -86,12 +103,9 @@ class LocController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Location $location)
     {
-        $location=Location::find($id);
-		//$url=$location->url;
-		//return redirect()->away($url);
-		return view('point', compact('location'));
+		return view('point', ['location' => $location]);
     }
 
     /**
@@ -100,9 +114,8 @@ class LocController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Location $location)
     {
-        $location=Location::find($id);
 		return view('locedit', compact('location'));
     }
 
@@ -113,25 +126,40 @@ class LocController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(LocationRequest $request, $id)
+    public function update(LocationRequest $request, Location $location)
     {
         $validated=$request->validated();
 
-		$location= Location::find($id);
-		
 		$location->name=$request->input('name');
 		$location->lat=$request->input('lat');
 		$location->long=$request->input('long');
-		$location->direction=$request->input('direction');
-		$location->lp=$request->input('lp');
-		$location->horizon=$request->input('horizon');
-		$location->hills=$request->input('hills');
-		$location->transp=$request->input('transp');
 		$location->description=$request->input('description');
-		$location->url=$request->input('url');
 		$location->distance=$request->input('distance');
 		$location->host=$request->input('host');
 		$location->sqm=$request->input('sqm');
+		$location->code=$request->input('code');
+		$location->url_gmap=$request->input('url_gmap');
+		$location->url_wiki=$request->input('url_wiki');
+		$location->url_openstr=$request->input('url_openstr');
+		$location->link_ody=$request->input('link_ody');
+		$location->gray=$request->input('gray');
+		$location->lightblue=$request->input('lightblue');
+		$location->blue=$request->input('blue');
+		$location->green=$request->input('green');
+		$location->yellow=$request->input('yellow');
+		$location->orange=$request->input('orange');
+		$location->red=$request->input('red');
+		$location->south=$request->input('south');
+		$location->north=$request->input('north');
+		$location->west=$request->input('west');
+		$location->east=$request->input('east');
+		$location->hills=$request->input('hills');
+		$location->valley=$request->input('valley');
+		$location->plato=$request->input('plato');
+		$location->auto1=$request->input('auto1');
+		$location->auto2=$request->input('auto2');
+		$location->train=$request->input('train');
+		$location->bus=$request->input('bus');
 		
         $filecontroller=new FileController;
 
@@ -156,9 +184,8 @@ class LocController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Location $location)
     {
-        $location=Location::find($id);
         $location->delete();
         return redirect()->route('locations.index');
     }

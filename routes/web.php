@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\LocController;
 use App\Http\Controllers\OddysController;
+use App\Http\Controllers\FileController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,7 @@ Route::get('/about', function(){
 	return view('about');
 })->name('about');
 
+//Route::resource('locations', LocController::class)->scoped(['location' => 'name']);
 Route::resource('locations', LocController::class);
 
 Route::resource('oddys', OddysController::class);

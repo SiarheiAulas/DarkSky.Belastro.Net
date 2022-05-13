@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
         <!--WYSIWYG-->
         <script src="https://cdn.tiny.cloud/1/esssxnna3kappnbe3yac5ejvd7ffu2jswun5lfq7mupla1ba/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js"></script>
         <!--Favicon-->
         <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/favicon/favicon.ico')}}">
         <!--

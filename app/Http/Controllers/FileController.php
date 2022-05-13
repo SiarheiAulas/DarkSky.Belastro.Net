@@ -8,8 +8,12 @@ use Illuminate\Http\File;
 
 class FileController extends Controller
 {
-    
-    public function uploadmap(Request $request){
+    public function store(){
+		$imgpath = request()->file('name')->store('uploads', 'public');
+    	return response()->json_encode(['location' => $imgpath]);
+	}
+
+	public function uploadmap(Request $request){
        
         if($request->is('locations')||$request->is('locations/*')){
 			if($request->file('mapimg')){

@@ -5,6 +5,10 @@
 	color:#333;
 	font-family: 'Open Sans',Arial,Helvetica,Verdana,sans-serif;
 }
+.bg{
+	background: #e5e1e1 url(../img/bg2.jpg) no-repeat fixed left top !important;
+	background-size: cover !important;
+}
 #map{
 	width: 100%;
 	height:100vh;
@@ -27,7 +31,7 @@ header{
 }
 .admin-btn{
 	float: left;
-	width: 10%;
+	width: 11%;
 	margin 5px 0;
 }
 .contact-panel-list{
@@ -58,7 +62,7 @@ a img{
 	float: left;
 }
 .navlink{
-	width: 20%;
+	width: 16.66%;
 	display: block;
 	float: left;
 	text-align: center;
@@ -69,7 +73,7 @@ a img{
 .admin-link{
 	width:100%
 }
-.navlink:hover{
+.navlink:hover, .navlinkactive {
 	color:#fafafa;
 	border:1px solid #888;
 	background-color: #888;
@@ -118,7 +122,8 @@ footer{
 	float: left;
 	width: 100%;
 	bottom:0;
-	position: sticky;
+	position: fixed;
+	bottom: 0;
 	background-color:#f8f9fa;
 }
 .footer-column{
@@ -188,7 +193,7 @@ textarea{
 }
 .btn-center{
 	width:30%;
-	margin: 5px auto;
+	margin: 5px auto 25px;
 	text-align: center;
 }
 .btn-wide{
@@ -208,4 +213,10 @@ textarea{
 }
 .description{
 	margin: 5px 0;
+}
+.text-justify{
+	text-align: justify
+}
+.hidden{
+	display: none;
 }

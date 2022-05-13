@@ -3,108 +3,95 @@
             <div class="filter-name">Фильтр параметров</div>
         <form  action="{{Route('filter')}}" method="get">
             <fieldset>
-                <legend>Направление от Минска</legend>
-                <div class="radio">
-                    <input type="radio" id="south" name="direction" value="s">
-                    <label for="south">Юг</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" id="north" name="direction" value="n">
-                    <label for="north">Север</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" id="west" name="direction" value="w">
-                    <label for="west">Запад</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" id="east" name="direction" value="e">
-                    <label for="east">Восток</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" id="no-matter" name="direction" value="n">
-                    <label for="no-matter">Не важно</label>
-                </div>
-            </fieldset>
-            <fieldset>
                 <legend>Зона засветки</legend>
                 <div class="radio">
-                    <input type="radio" id="gray" name="lp" value="gray">
+                    <input type="checkbox" id="gray" name="gray" value="Серая">
                     <label for="gray">Серая</label>
                 </div>
                 <div class="radio">
-                    <input type="radio" id="blue" name="lp" value="blue">
+                    <input type="checkbox" id="blue" name="blue" value="Синяя">
                     <label for="blue">Синяя</label>
                 </div>
                 <div class="radio">
-                    <input type="radio" id="lightblue" name="lp" value="lightblue">
+                    <input type="checkbox" id="lightblue" name="lightblue" value="Голубая">
                     <label for="lightblue">Голубая</label>
                 </div>
                 <div class="radio">
-                    <input type="radio" id="green" name="lp" value="green">
+                    <input type="checkbox" id="green" name="green" value="Зеленая">
                     <label for="green">Зеленая</label>
                 </div>
-                <div class="radio">
-                    <input type="radio" id="no-matter" name="lp" value="n">
-                    <label for="no-matter">Не важно</label>
+				<div class="radio">
+                    <input type="checkbox" id="yellow" name="yellow" value="Желтая">
+                    <label for="yellow">Желтая</label>
+                </div><div class="radio">
+                    <input type="checkbox" id="orange" name="orange" value="Оранжевая">
+                    <label for="orange">Оранжевая</label>
+                </div><div class="radio">
+                    <input type="checkbox" id="red" name="red" value="Красная">
+                    <label for="red">Красная</label>
                 </div>
             </fieldset>
             <fieldset>
                 <legend>Чистый горизонт</legend>
                 <div class="radio">
-                    <input type="radio" id="to-south" name="horizon" value="s">
-                    <label for="to-south"> На юге</label>
+                    <input type="checkbox" id="south" name="south" value="На юге">
+                    <label for="south">На юге</label>
                 </div>
                 <div class="radio">
-                    <input type="radio" id="to-north" name="horizon" value="n">
-                    <label for="to-north">На севере</label>
+                    <input type="checkbox" id="north" name="north" value="На севере">
+                    <label for="north">На севере</label>
                 </div>
                 <div class="radio">
-                    <input type="radio" id="to-west" name="horizon" value="w">
-                    <label for="to-west">На западе</label>
+                    <input type="checkbox" id="west" name="west" value="На западе">
+                    <label for="west">На западе</label>
                 </div>
                 <div class="radio">
-                    <input type="radio" id="to-east" name="horizon" value="e">
-                    <label for="to-east">На востоке</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" id="no-matter" name="horizon" value="n">
-                    <label for="no-matter">Не важно</label>
+                    <input type="checkbox" id="east" name="east" value="На востоке">
+                    <label for="east">На востоке</label>
                 </div>
             </fieldset>
             <fieldset>
-                <legend>Холмы</legend>
+                <legend>Рельеф</legend>
                 <div class="radio">
-                    <input type="radio" id="yep" name="hills" value="t">
-                    <label for="south">Да</label>
+                    <input type="checkbox" id="hills" name="hills" value="Холмы">
+                    <label for="hills">Холмы</label>
                 </div>
                 <div class="radio">
-                    <input type="radio" id="nope" name="hills" value="f">
-                    <label for="nope">Нет</label>
+                    <input type="checkbox" id="valley" name="valley" value="Низина">
+                    <label for="valley">Низина</label>
                 </div>
                 <div class="radio">
-                    <input type="radio" id="no-matter" name="hills" value="n">
-                    <label for="no-matter">Не важно</label>
+                    <input type="checkbox" id="plato" name="plato" value="Плато">
+                    <label for="plato">Плато</label>
                 </div>
             </fieldset>
             <fieldset>
                 <legend>Доступна для транспорта</legend>
                 <div class="radio">
-                    <input type="radio" id="auto" name="transp" value="auto">
-                    <label for="auto">Автомобиль</label>
+                    <input type="checkbox" id="auto1" name="auto1" value="Автомобиль (легковой)">
+                    <label for="auto1">Автомобиль (легковой)</label>
+                </div>
+				<div class="radio">
+                    <input type="checkbox" id="auto2" name="auto2" value="Автомобиль (внедорожник)">
+                    <label for="auto2">Автомобиль (внедорожник)</label>
                 </div>
                 <div class="radio">
-                    <input type="radio" id="train" name="transp" value="train">
+                    <input type="checkbox" id="train" name="train" value="Поезд">
                     <label for="train">Поезд</label>
                 </div>
                 <div class="radio">
-                    <input type="radio" id="bus" name="transp" value="bus">
+                    <input type="checkbox" id="bus" name="bus" value="Автобус">
                     <label for="bus">Автобус</label>
                 </div>
-                <div class="radio">
-                    <input type="radio" id="no-matter" name="transp" value="no-matter">
-                    <label for="no-matter">Не важно</label>
-                </div>
             </fieldset>
+			<fieldset>
+				<legend>Максимальное расстояние от Минска</legend>
+				<div>
+					<input type="range" id="distance" name="distance" min="0" max="500" oninput="rangevalue.value=value"><br>
+					<label for="distance">по прямой, км: </label>
+					<output id="rangevalue">50</output>
+				</div>
+			</fieldset>
             <fieldset>
             	<button type="submit" class="btn btn-primary mybtn1" >Показать</button>
             	<button type="reset" class="btn btn-primary mybtn1" >Сброс</button>
