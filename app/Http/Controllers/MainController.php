@@ -12,51 +12,45 @@ class MainController extends Controller
         return view('map', compact('points'));
     }
     
-   //s public function filter(Request $request){
-   //     $gray=$request->input('gray');
-	//	$gray=$request->input('gray');
-    //    $blue=$request->input('blue');
-    //    $lightblue=$request->input('lightblue');
-    //    $green=$request->input('green');
-    //    $yellow=$request->input('yellow');
-    //    $orange=$request->input('orange');
-    //    $red=$request->input('red');
-    //    $south=$request->input('south');
-    //    $north=$request->input('north');
-    //    $west=$request->input('west');
-    //    $east=$request->input('east');
-    //    $hills=$request->input('hills');
-    //    $valley=$request->input('valley');
-    //    $plato=$request->input('plato');
-    //    $auto1=$request->input('auto1');
-    //    $auto2=$request->input('auto2');
-    //    $train=$request->input('train');
-    //    $bus=$request->input('bus');
-    //    $distance=$request->input('distance');
-    //    
-    //    $points=Location::where('gray', $gray)->whereNotNull('gray')
-	//		->orWhere('blue', $blue)->whereNotNull('gray')
-	//		->orWhere('lightblue', $lightblue)->whereNotNull('lightblue')
-	//		->orWhere('green', $green)->whereNotNull('green')
-	//		->orWhere('yellow', $yellow)->whereNotNull('yellow')
-	//		->orWhere('orange', $orange)->whereNotNull('orange')
-	//		->orWhere('red', $red)->whereNotNull('red')->orWhere
-	//		
-	//		
-	//		->orWhere('south', $south)->whereNotNull('south')
-	//		->orWhere('north', $north)->whereNotNull('north')
-	//		->orWhere('west', $west)->whereNotNull('west')
-	//		->orWhere('east', $east)->whereNotNull('east')
-	//		->orWhere('hills', $hills)->whereNotNull('hills')
-	//		->orWhere('valley', $valley)->whereNotNull('valley')
-	//		->orWhere('plato', $plato)->whereNotNull('plato')
-	//		->orWhere('auto1', $auto1)->whereNotNull('auto1')
-	//		->orWhere('auto2', $auto2)->whereNotNull('auto1')
-	//		->orWhere('train', $train)->whereNotNull('train')
-	//		->orWhere('bus', $bus)->whereNotNull('bus')
-	//		->orWhere('distance','>=', $distance)->whereNotNull('distance')
-	//	->get();
-	//	
-    //    return view('map', compact('points'));
-    //}
+   	public function filter(Request $request)
+    {
+		//$points=Location::whereIn('gray',$request->input('lp'))
+		//	->orWhereIn('green',$request->input('lp'))
+		//	->orWhereIn('blue',$request->input('lp'))
+		//	->orWhereIn('lightblue',$request->input('lp'))
+		//	->orWhereIn('yellow',$request->input('lp'))
+		//	->orWhereIn('orange',$request->input('lp'))
+		//	->orWhereIn('red',$request->input('lp'))
+		//	->get();
+		
+		$points=Location::where(function($query) use($request){
+							$query->orWhereIn('green',$request->input('lp'))
+								  ->orWhereIn('blue',$request->input('lp'))
+								  ->orWhereIn('lightblue',$request->input('lp'))
+								  ->orWhereIn('yellow',$request->input('lp'))
+								  ->orWhereIn('orange',$request->input('lp'))
+								  ->orWhereIn('red',$request->input('lp'));
+							})
+							->where(function($query) use($request){
+							$query->orWhereIn('hills',$request->input('relief'))
+								  ->orWhereIn('valley',$request->input('relief'))
+							      ->orWhereIn('plato',$request->input('relief'));
+							})
+							->where(function($query) use($request){
+							$query->orWhereIn('auto1',$request->input('transport'))
+								  ->orWhereIn('auto2',$request->input('transport'))
+							      ->orWhereIn('train',$request->input('transport'))
+							      ->orWhereIn('bus',$request->input('transport'));
+							})
+							->where(function($query) use($request){
+							$query->orWhereIn('south',$request->input('horizon'))
+								  ->orWhereIn('north',$request->input('horizon'))
+							      ->orWhereIn('west',$request->input('horizon'))
+							      ->orWhereIn('east',$request->input('horizon'));
+							})
+							->where('distance','>=', $request->input('distance'))
+							->get();
+
+		return view('map', compact('points'));
+    }
 }

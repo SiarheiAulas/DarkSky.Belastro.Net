@@ -61,25 +61,51 @@ class LocController extends Controller
 		$location->url_wiki=$request->input('url_wiki');
 		$location->url_openstr=$request->input('url_openstr');
 		$location->link_ody=$request->input('link_ody');
-		$location->gray=$request->input('gray');
-		$location->lightblue=$request->input('lightblue');
-		$location->blue=$request->input('blue');
-		$location->green=$request->input('green');
-		$location->yellow=$request->input('yellow');
-		$location->orange=$request->input('orange');
-		$location->red=$request->input('red');
 		$location->south=$request->input('south');
 		$location->north=$request->input('north');
 		$location->west=$request->input('west');
 		$location->east=$request->input('east');
-		$location->hills=$request->input('hills');
-		$location->valley=$request->input('valley');
-		$location->plato=$request->input('plato');
 		$location->auto1=$request->input('auto1');
 		$location->auto2=$request->input('auto2');
 		$location->train=$request->input('train');
 		$location->bus=$request->input('bus');
+				
+		switch($request->input('relief')){
+			case 'Холмы':
+				$location->hills=$request->input('relief');
+				break;
+			case 'Низина':
+				$location->valley=$request->input('relief');
+				break;
+			case 'Плато':
+				$location->plato=$request->input('relief');
+				break;
+		}
 		
+		switch($request->input('lp')){
+			case 'Серая':
+				$location->gray=$request->input('lp');
+				break;
+			case 'Синяя':
+				$location->blue=$request->input('lp');
+				break;
+			case 'Голубая':
+				$location->lightblue=$request->input('lp');
+				break;
+			case 'Зеленая':
+				$location->green=$request->input('lp');
+				break;
+			case 'Желтая':
+				$location->yellow=$request->input('lp');
+				break;
+			case 'Оранжевая':
+				$location->orange=$request->input('lp');
+				break;
+			case 'Красная':
+				$location->red=$request->input('lp');
+				break;
+		}
+								
 		$filecontroller=new FileController;
 
 		if($request->hasFile('mapimg')){
@@ -103,9 +129,12 @@ class LocController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Location $location)
+    public function show($param)
     {
-		return view('point', ['location' => $location]);
+		$location = Location::where('id', $param)
+            ->orWhere('name', $param)
+            ->firstOrFail();
+		return view('point', compact('location'));
     }
 
     /**
@@ -142,24 +171,50 @@ class LocController extends Controller
 		$location->url_wiki=$request->input('url_wiki');
 		$location->url_openstr=$request->input('url_openstr');
 		$location->link_ody=$request->input('link_ody');
-		$location->gray=$request->input('gray');
-		$location->lightblue=$request->input('lightblue');
-		$location->blue=$request->input('blue');
-		$location->green=$request->input('green');
-		$location->yellow=$request->input('yellow');
-		$location->orange=$request->input('orange');
-		$location->red=$request->input('red');
 		$location->south=$request->input('south');
 		$location->north=$request->input('north');
 		$location->west=$request->input('west');
 		$location->east=$request->input('east');
-		$location->hills=$request->input('hills');
-		$location->valley=$request->input('valley');
-		$location->plato=$request->input('plato');
 		$location->auto1=$request->input('auto1');
 		$location->auto2=$request->input('auto2');
 		$location->train=$request->input('train');
 		$location->bus=$request->input('bus');
+		
+		switch($request->input('relief')){
+			case 'Холмы':
+				$location->hills=$request->input('relief');
+				break;
+			case 'Низина':
+				$location->valley=$request->input('relief');
+				break;
+			case 'Плато':
+				$location->plato=$request->input('relief');
+				break;
+		}
+		
+		switch($request->input('lp')){
+			case 'Серая':
+				$location->gray=$request->input('lp');
+				break;
+			case 'Синяя':
+				$location->blue=$request->input('lp');
+				break;
+			case 'Голубая':
+				$location->lightblue=$request->input('lp');
+				break;
+			case 'Зеленая':
+				$location->green=$request->input('lp');
+				break;
+			case 'Желтая':
+				$location->yellow=$request->input('lp');
+				break;
+			case 'Оранжевая':
+				$location->orange=$request->input('lp');
+				break;
+			case 'Красная':
+				$location->red=$request->input('lp');
+				break;
+		}
 		
         $filecontroller=new FileController;
 

@@ -3,13 +3,11 @@
        <tr>
            <th>Название</th>
            <th>Одиссея</th>
-           <th>Расстояние</th>
+           <th>Расстояние от Минска, км</th>
            <th>Широта</th>
            <th>Долгота</th>
-		   <th>Ссылка на Google Maps</th>
-           <th>Ссылка на Wikimapia</th>
-           <th>Cсылка на Open Street Map</th>
-           <th>SQM</th>
+		   <th>Ссылка на картографические сервисы</th>
+		   <th>SQM, <sup>m</sup>/"<sup>2</sup></th>
            <th>Описание</th>
 			@auth()
            		<th>Action1</th>

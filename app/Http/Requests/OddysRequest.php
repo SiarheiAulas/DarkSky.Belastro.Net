@@ -24,9 +24,9 @@ class OddysRequest extends FormRequest
     public function rules()
     {
         return [
-            'header'=>'required||min:10||max:200',
-			'url'=>'required||url',
-			'description'=>'nullable||min:10||max:10000'
+            'header'=>'required|min:10|max:200',
+			'url'=>'required|url',
+			'description'=>'nullable|min:10'
 		];
     }
 }

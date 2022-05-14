@@ -14,9 +14,10 @@
     <td>{{$loc->distance}}</td>
     <td>{{$loc->lat}}</td>
     <td>{{$loc->long}}</td>
-	<td class="location-group"><a href="{{$loc->url_gmap}}"><img src="{{asset('img/globus.png')}}" alt="link to Google Map"></a></td>
-	<td class="location-group"><a href="{{$loc->url_wiki}}"><img src="{{asset('img/wikimapia.ico')}}" alt="link to Wikimapia"></a></td>
-	<td class="location-group"><a href="{{$loc->url_openstr}}"><img src="{{asset('img/osm.ico')}}" alt="link to OpenStreetMap"></a></td>
+	<td class="location-group"><a href="{{$loc->url_gmap}}"><img src="{{asset('img/globus.png')}}" alt="link to Google Map"></a>
+							   <a href="{{$loc->url_wiki}}"><img src="{{asset('img/wikimapia.ico')}}" alt="link to Wikimapia"></a> 
+							   <a href="{{$loc->url_openstr}}"><img src="{{asset('img/osm.ico')}}" alt="link to OpenStreetMap"></a>
+	</td>
     <td>{{$loc->sqm}}</td>
 	<td><a href="{{Route('locations.show', $loc)}}">{!!$loc->description!!}</a></td>
 	@auth()

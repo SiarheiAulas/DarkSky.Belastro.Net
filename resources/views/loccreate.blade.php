@@ -62,19 +62,19 @@
 					<div>
 						<fieldset>
 							<legend>Зона засветки</legend>
-							<input type="radio" id="gray" name="gray" value="Серая">
+							<input type="radio" id="gray" name="lp" value="Серая">
 							<label for="gray">Серая</label>
-							<input type="radio" id="blue" name="blue" value="Синяя">
+							<input type="radio" id="blue" name="lp" value="Синяя">
 							<label for="blue">Синяя</label>
-							<input type="radio" id="lightblue" name="lightblue" value="Голубая">
+							<input type="radio" id="lightblue" name="lp" value="Голубая">
 							<label for="lightblue">Голубая</label>
-							<input type="radio" id="green" name="green" value="Зеленая">
+							<input type="radio" id="green" name="lp" value="Зеленая">
 							<label for="green">Зеленая</label>
-							<input type="radio" id="yellow" name="yellow" value="Желтая">
+							<input type="radio" id="yellow" name="lp" value="Желтая">
 							<label for="yellow">Желтая</label>
-							<input type="radio" id="orange" name="orange" value="Оранжевая">
+							<input type="radio" id="orange" name="lp" value="Оранжевая">
 							<label for="orange">Оранжевая</label>
-							<input type="radio" id="red" name="red" value="Красная">
+							<input type="radio" id="red" name="lp" value="Красная">
 							<label for="red">Красная</label>
 						</fieldset>
 					</div>
@@ -94,11 +94,11 @@
 					<div>
 						<fieldset>
 							<legend>Рельеф</legend>
-							<input type="radio" id="hills" name="hills" value="Холмы">
+							<input type="radio" id="hills" name="relief" value="Холмы">
 							<label for="hills">Холмы</label>
-							<input type="radio" id="valley" name="valley" value="Низина">
+							<input type="radio" id="valley" name="relief" value="Низина">
 							<label for="valley">Низина</label>
-							<input type="radio" id="plato" name="plato" value="Плато">
+							<input type="radio" id="plato" name="relief" value="Плато">
 							<label for="plato">Плато</label>
 						</fieldset>
 					</div>
