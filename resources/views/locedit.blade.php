@@ -117,11 +117,16 @@
 						</fieldset>
 					</div>
 					<div class="col-12">
-						<label for="description", class="form-label">Oписание</label>
+						<label for="description", class="form-label">Краткое описание до 500 знаков (для отображения в списке)</label>
+						<textarea id="description", class="form-control textarea-height", name="description", placeholder="Введите описание">{{$location->brief}}</textarea>
+					</div>
+					<div class="col-12">
+						<label for="description", class="form-label">Полное описание площадки</label>
 						<textarea id="description", class="form-control textarea-height", name="description", placeholder="Введите краткое описание для отображения на карте">{{$location->description}}</textarea>
 						<script>
                         		tinymce.init({
                         		    selector: 'textarea',
+									height:650,
                         		    plugins: [
 										"advlist autolink lists link image charmap print preview anchor",
 										"searchreplace visualblocks code fullscreen",

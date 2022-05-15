@@ -69,6 +69,7 @@ class LocController extends Controller
 		$location->auto2=$request->input('auto2');
 		$location->train=$request->input('train');
 		$location->bus=$request->input('bus');
+		$location->brief=$request->input('brief');
 				
 		switch($request->input('relief')){
 			case 'Холмы':
@@ -179,6 +180,7 @@ class LocController extends Controller
 		$location->auto2=$request->input('auto2');
 		$location->train=$request->input('train');
 		$location->bus=$request->input('bus');
+		$location->brief=$request->input('brief');
 		
 		switch($request->input('relief')){
 			case 'Холмы':

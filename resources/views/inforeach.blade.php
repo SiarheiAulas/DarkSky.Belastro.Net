@@ -1,5 +1,5 @@
 <tr>
-    <td>
+    <td class="td-description">
 		<a href="{{Route('locations.show', $loc)}}">{{$loc->name}} 
 			@isset($loc->code)
 				({{$loc->code}})
@@ -11,15 +11,15 @@
 			<a href="{{$loc->link_ody}}">Перейти к одиссее</a>
 		@endisset
 	</td>
-    <td>{{$loc->distance}}</td>
-    <td>{{$loc->lat}}</td>
-    <td>{{$loc->long}}</td>
-	<td class="location-group"><a href="{{$loc->url_gmap}}"><img src="{{asset('img/globus.png')}}" alt="link to Google Map"></a>
+	<td class="td-description"><a href="{{Route('locations.show', $loc)}}">{{$loc->distance}}</a></td>
+	<td class="td-description"><a href="{{Route('locations.show', $loc)}}">{{$loc->lat}}</a></td>
+	<td class="td-description"><a href="{{Route('locations.show', $loc)}}">{{$loc->long}}</a></td>
+	<td class="location-group nam"><a href="{{$loc->url_gmap}}"><img src="{{asset('img/globus.png')}}" alt="link to Google Map"></a>
 							   <a href="{{$loc->url_wiki}}"><img src="{{asset('img/wikimapia.ico')}}" alt="link to Wikimapia"></a> 
 							   <a href="{{$loc->url_openstr}}"><img src="{{asset('img/osm.ico')}}" alt="link to OpenStreetMap"></a>
 	</td>
-    <td>{{$loc->sqm}}</td>
-	<td><a href="{{Route('locations.show', $loc)}}">{!!$loc->description!!}</a></td>
+	<td class="td-description"><a href="{{Route('locations.show', $loc)}}">{{$loc->sqm}}</a></td>
+	<td class="td-description"><a href="{{Route('locations.show', $loc)}}">{!!$loc->brief!!}</a></td>
 	@auth()
 		<td><a href="{{Route('locations.edit', $loc)}}">Редактировать</a></td>
 		<td>

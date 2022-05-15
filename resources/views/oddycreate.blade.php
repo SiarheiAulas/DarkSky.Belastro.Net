@@ -15,11 +15,12 @@
 						<input type="text" name="url" id="url" placeholder="URL (belastro.net)" value="{{old('url')}}" class="form-control">
 					</div>
 					<div class="col-12">
-						<label for="description", class="form-label">Описание</label>
+						<label for="description", class="form-label">Текст статьи</label>
 						<textarea id="description", class="form-control textarea-height", name="description", placeholder="Введите описание">{{old('description')}}</textarea>
 							<script>
                         		tinymce.init({
                         		    selector: 'textarea',
+									height:800,
                         		    plugins: [
 										"advlist autolink lists link image charmap print preview anchor",
 										"searchreplace visualblocks code fullscreen",

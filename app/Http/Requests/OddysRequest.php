@@ -25,7 +25,7 @@ class OddysRequest extends FormRequest
     {
         return [
             'header'=>'required|min:10|max:200',
-			'url'=>'required|url',
+			'url'=>'nullable|url',
 			'description'=>'nullable|min:10'
 		];
     }

@@ -5,6 +5,9 @@
 	color:#333;
 	font-family: 'Open Sans',Arial,Helvetica,Verdana,sans-serif;
 }
+a, a:hover, a:visited{
+	text-decoration: none;
+}
 .bg{
 	background: #e5e1e1 url(../img/bg2.jpg) no-repeat fixed left top !important;
 	background-size: cover !important;
@@ -136,8 +139,9 @@ footer{
 	text-decoration: none;
 }
 .about-page{
-	padding: 0 10px;
+	padding: 0 15px 30px;
 	text-align: justify;
+	min-height: 100vh;
 }
 .about-title{
 	width: 90%;
@@ -148,7 +152,10 @@ footer{
 }
 .abstract{
 	padding: 10px 0;
-	
+}
+.abstract-item{
+	float: left;
+	display: inline-block;
 }
 .red-bold{
 	color:red;
@@ -181,6 +188,19 @@ footer{
 }
 .location-group{
 	text-align: center;
+}
+.location-group>a img, .about-title>a img{
+	height:20px;
+	width:20px;
+}
+.td-description{
+	overflow-y: auto;
+}
+.td-description a, .td-description a:visited, .td-description a:hover{
+	color: #333;
+}
+.w80{
+	width: 90px;
 }
 .nam{
 	width: 80px;
@@ -219,4 +239,19 @@ textarea{
 }
 .hidden{
 	display: none;
+}
+.oddylist>div a{
+	color: #888;
+}
+
+.tr-height{
+	max-height: 50px !important;
+}
+.point-column{
+	float: left;
+	width: 50%;
+}
+.w100{
+	width: 100%;
+	border-top: 1px solid #777;
 }

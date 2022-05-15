@@ -20,7 +20,7 @@
                     <a href="https://forum.belastro.net/"><li class="navlink">Форум</li></a>
                     <a href="{{Route('locations.index')}}"><li @class(['navlink', 'navlinkactive'=>request()->routeIs('locations.index')])>Список площадок</li></a>
                     <a href="{{Route('oddys.index')}}"><li @class(['navlink', 'navlinkactive'=>request()->routeIs('oddys.index')])>Одиссеи</li></a>
-                    <a href="mailto:lupus@belastro.net?сс=avlassergey@list.ru&body=Добрый день. Хотел бы добавить на сайт свою наблюдательную площадку:  Мои кнтакты для обратной связи: &subject=Добавление наблюдательной площадки на сайт"><li class="navlink">Добавить свою площадку</li></a>
+                    <a href="mailto:lupus@belastro.net?сс=avlassergey@list.ru&body=Добрый день. Хотел бы добавить на сайт darksky.belastro.net свою наблюдательную площадку:  Мои кнтакты для обратной связи: &subject=Добавление наблюдательной площадки на сайт darksky.belastro.net"><li class="navlink">Добавить свою площадку</li></a>
                 </ul>
             </div>
 </header>

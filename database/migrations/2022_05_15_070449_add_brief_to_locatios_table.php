@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('oddies', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-			$table->string('header')->required();
-			$table->string('url')->nullable();
+        Schema::table('locations', function (Blueprint $table) {
+            $table->string('brief')->required();
         });
     }
 
@@ -28,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('oddys');
+        Schema::table('locations', function (Blueprint $table) {
+			$table->dropColumn('brief');
+        });
     }
 };

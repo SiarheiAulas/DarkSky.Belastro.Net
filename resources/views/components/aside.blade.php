@@ -87,9 +87,9 @@
 			<fieldset>
 				<legend>Максимальное расстояние от Минска</legend>
 				<div>
-					<input type="range" id="distance" name="distance" min="0" max="500" oninput="rangevalue.value=value"><br>
+					<input type="range" id="distance" name="distance" min="0" max="500" value="500" oninput="rangevalue.value=value"><br>
 					<label for="distance">по прямой, км: </label>
-					<output id="rangevalue">50</output>
+					<output id="rangevalue">500</output>
 				</div>
 			</fieldset>
             <fieldset>

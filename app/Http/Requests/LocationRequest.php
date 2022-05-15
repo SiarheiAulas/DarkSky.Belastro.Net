@@ -55,7 +55,8 @@ class LocationRequest extends FormRequest
 			'auto1' => 'nullable|min:21|max:21',
 			'auto2' => 'nullable|min:24|max:24',
 			'train' => 'nullable|alpha|min:5|max:5',
-			'bus' => 'nullable|alpha|min:7|max:7'
+			'bus' => 'nullable|alpha|min:7|max:7',
+			'brief'=>'required|min:10|max:500',
         ];  
 	}
 }
