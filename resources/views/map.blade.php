@@ -6,7 +6,7 @@
         <div id="map"></div>
             <script>
 
-				var src = "{{asset('img/kml/NewWorldAtlas_ArtificialSkyBrightness.kml')}}";
+				var src = "{{asset('img/newkml/belarus.kml')}}";
 
                 function initMap() {
                     var minsk = {lat: 53.90305300751979, lng: 27.563067765684398},
@@ -53,8 +53,8 @@
 					var kmlLayer = new google.maps.KmlLayer(src, {
           				suppressInfoWindows: true,
 						preserveViewport: false,
-						map: map
-        			});
+						map: map,
+					});
 					//var mapOverlay = new google.maps.Rectangle({
     				//	fillColor: '#000000',
 					//	fillOpacity: 0.1,
