@@ -117,11 +117,11 @@
 					</div>
 					<div class="col-12">
 						<label for="description", class="form-label">Краткое описание до 500 знаков (для отображения в списке)</label>
-						<textarea id="description", class="form-control textarea-height", name="description", placeholder="Введите описание">{{old('brief')}}</textarea>
+						<textarea id="description", class="form-control textarea-height", name="brief", placeholder="Введите краткое описание для отображения на карте">{{old('brief')}}</textarea>
 					</div>
 					<div class="col-12">
 						<label for="description", class="form-label">Полное описание площадки</label>
-						<textarea id="description", class="form-control textarea-height", name="description", placeholder="Введите краткое описание для отображения на карте">{{old('description')}}</textarea>
+						<textarea id="description", class="form-control textarea-height", name="description", placeholder="Введите описание">{{old('description')}}</textarea>
 							<script>
                         		tinymce.init({
                         		    selector: 'textarea',

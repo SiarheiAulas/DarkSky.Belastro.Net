@@ -26,7 +26,15 @@ Route::get('/about', function(){
 
 Route::resource('locations', LocController::class);
 
+Route::get('locations/create', [LocController::class, 'create'])->middleware(['auth']);
+
+Route::get('locations/{location}/edit', [LocController::class, 'edit'])->middleware(['auth']);
+
 Route::resource('oddys', OddysController::class);
+
+Route::get('oddys/create', [OddysController::class, 'create'])->middleware(['auth']);
+
+Route::get('oddys/{oddy}/edit', [OddysController::class, 'edit'])->middleware(['auth']);
 
 Route::get('/ypevusaby', function () {
     return view('dashboard');

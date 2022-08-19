@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Май 15 2022 г., 12:55
+-- Время создания: Май 23 2022 г., 20:13
 -- Версия сервера: 10.4.21-MariaDB
 -- Версия PHP: 8.0.10
 
@@ -20,6 +20,70 @@ SET time_zone = "+00:00";
 --
 -- База данных: `darksky`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `failed_jobs`
+--
+
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `locations`
+--
+
+CREATE TABLE `locations` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lat` double(20,9) NOT NULL,
+  `long` double(20,8) NOT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `host` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `distance` int(11) DEFAULT NULL,
+  `sqm` double(8,2) DEFAULT NULL,
+  `mapimg` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mapimgext` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pano` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `panoext` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url_gmap` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url_wiki` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url_openstr` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link_ody` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gray` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `blue` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lightblue` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `green` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `yellow` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `orange` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `red` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `south` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `north` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `west` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `east` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `hills` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `plato` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `auto1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `auto2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `train` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bus` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `valley` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `brief` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `locations`
@@ -152,6 +216,57 @@ INSERT INTO `locations` (`id`, `created_at`, `updated_at`, `name`, `lat`, `long`
 (124, NULL, NULL, 'ZM', 55.315694440, 27.19455556, '', 'infinity', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
 (125, NULL, NULL, 'ZR', 55.003344440, 28.23320000, '', 'infinity', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '');
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(59, '2014_10_12_000000_create_users_table', 1),
+(60, '2014_10_12_100000_create_password_resets_table', 1),
+(61, '2019_08_19_000000_create_failed_jobs_table', 1),
+(62, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(63, '2022_05_05_223424_create_locations_table', 1),
+(64, '2022_05_09_181557_add_mapimg_to_locations_table', 2),
+(65, '2022_05_09_185631_add_pano_to_locations_table', 3),
+(66, '2022_05_12_073222_create_oddys_table', 4),
+(67, '2022_05_12_073222_create_oddies_table', 5),
+(68, '2022_05_12_201520_add_deleted_at_to_oddies_table', 6),
+(69, '2022_05_12_201702_add_deleted_at_to_locations_table', 6),
+(70, '2022_05_12_202030_add_deleted_at_to_users_table', 7),
+(71, '2022_05_12_220632_add_code_to_locatios_table', 8),
+(72, '2022_05_13_124431_add_checkboxes_to_locatios_table', 9),
+(73, '2022_05_13_150219_add_more_checkboxes_to_locatios_table', 10),
+(74, '2022_05_13_181722_add_description_to_oddies_table', 11),
+(77, '2022_05_15_070449_add_brief_to_locatios_table', 12);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `oddies`
+--
+
+CREATE TABLE `oddies` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `header` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 --
 -- Дамп данных таблицы `oddies`
 --
@@ -161,12 +276,151 @@ INSERT INTO `oddies` (`id`, `created_at`, `updated_at`, `header`, `url`, `delete
 (3, '2022-05-12 08:19:23', '2022-05-13 16:21:52', 'Вторая Одиссея: \"Бояры, или заколдованные холмы\"', 'http://belastro.net/?menu=1&submenu=103&page=1&nid=88', NULL, NULL),
 (6, '2022-05-13 16:34:15', '2022-05-13 16:35:06', 'test test test test test 5', 'https://forum.belastro.net/', NULL, '<p><span style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\">Идея назревала у меня давно: по сути, у нас осталось только 2 загородные наблюдательные площадки -- Красное Знамя (KZ) и Зазерка (Z). Каждое из них имеет свои достоинства, но есть большой недостаток: по уровню засветки они уступают Асино. Но в Асино сильнейшая влажность, кроме того я согласен с Таней (Selestia), что Асино для нас потеряно -- там уже наверняка застроили нашу поляну.</span><br style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\" /><br style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\" /><br style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\" /><span style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\">И вот,&nbsp;</span><a style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-decoration-line: none; color: #114477; text-align: justify; background-color: #ffffff;\" href=\"http://www.forum.belastro.net/viewtopic.php?p=3111#3111\" target=\"_blank\" rel=\"noopener\">21 января 2008 г.</a><span style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\">&nbsp;я решил готовиться к первому выезду Одиссеи. В качестве цели я выбрал станцию Мезиновка (Барановическое направление) -- следующая после Асино. Мезиновка находится как раз посередине между Негорелым и Столбцами. Именно в этом месте, согласно&nbsp;</span><a style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-decoration-line: none; color: #114477; text-align: justify; background-color: #ffffff;\" href=\"http://www.astronomy.ru/forum/index.php/topic,9116.msg471261.html#msg471261\" target=\"_blank\" rel=\"noopener\">картам засветки</a><span style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\">, сделанным Вовой (Pova), минимальный уровень засветки.</span><br style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\" /><br style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\" /><br style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\" /><span style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\">В субботу утром 26 января группа в составе меня (Lupus), Димы (DzmitryK) и Миши (AutechrE) отправилась в Мезиновку (М). Погода с утра не радовала -- шёл дождь, а так как мы ехали в заболоченные лесистые места, то радости нам это не доставляло.</span><br style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\" /><span style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\">От Минска до Мезиновки электричка едет 1ч 10 мин. Выехав в 9ч 26 мин, в 10 ч 40 мин. мы были уже на станции.</span><br style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\" /><br style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\" /><br style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\" /><span style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\">Итак, фотоотчёт по первому этапу Одиссеи. Со списком остальных Одиссей можно ознакомиться на&nbsp;</span><u style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\"><a style=\"text-decoration-line: none; color: #114477;\" href=\"http://www.darksky.belastro.net/Infinity_observPlaces_Belarus.html\" target=\"_blank\" rel=\"noopener\">странице нашего сайта</a></u><span style=\"font-family: verdana, arial, helvetica; font-size: 12px; text-align: justify; background-color: #ffffff;\">, посвящённой загородным наблюдательным площадкам.</span></p>');
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `personal_access_tokens`
+--
+
+CREATE TABLE `personal_access_tokens` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_used_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 --
 -- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Siarhei', 'avlassergey@list.ru', NULL, '$2y$10$wjZqkxI/AB6bqZhnm7eVe.WJY.17pFi3z7Sh/i/uUdrNG22G6SbRG', NULL, '2022-05-07 10:04:04', '2022-05-07 10:04:04', NULL);
+
+--
+-- Индексы сохранённых таблиц
+--
+
+--
+-- Индексы таблицы `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Индексы таблицы `locations`
+--
+ALTER TABLE `locations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `oddies`
+--
+ALTER TABLE `oddies`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Индексы таблицы `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
+  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
+
+--
+-- Индексы таблицы `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- AUTO_INCREMENT для сохранённых таблиц
+--
+
+--
+-- AUTO_INCREMENT для таблицы `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `locations`
+--
+ALTER TABLE `locations`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
+
+--
+-- AUTO_INCREMENT для таблицы `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+
+--
+-- AUTO_INCREMENT для таблицы `oddies`
+--
+ALTER TABLE `oddies`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT для таблицы `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

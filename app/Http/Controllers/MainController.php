@@ -11,8 +11,8 @@ class MainController extends Controller
         $points=Location::all();
         return view('map', compact('points'));
     }
-    
-   	public function filter(Request $request)
+
+    public function filter(Request $request)
     {
 		//$points=Location::whereIn('gray',$request->input('lp'))
 		//	->orWhereIn('green',$request->input('lp'))

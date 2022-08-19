@@ -1,7 +1,7 @@
 @extends('layouts.main')
     @section('content')
         <x-header/>
-		<div class="about-page bg">
+		<div class="point-page">
 			<div class="about-title">{{$location->name}} 
 				@isset($location->code)
 					({{$location->code}})  
@@ -60,7 +60,7 @@
 			</div>
 			<div class="point-column w100">
 				@isset($location->mapimg)
-					<div class="image2"><img src="{{asset('/storage/'.$location->mapimg)}}" alt="map image"></div>
+					<div class="image2"><img src="{{asset('storage/'.$location->mapimg)}}" alt="map image"></div>
 				@endisset
 				<div class="abstract">{!!$location->description!!}</div>
 				@isset($location->pano)
