@@ -1,5 +1,5 @@
 <aside>
-        <div class="filtr">
+       <div class="filtr">
             <div class="filter-name">Фильтр параметров</div>
         <form  action="{{Route('filter')}}" method="get">
             <fieldset>
