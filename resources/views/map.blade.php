@@ -257,12 +257,15 @@ window.addEventListener('load', function() {
     }
 });
 </script>
-        
-        <script>
-            function showElement(){
-                
-            }
-        </script>
-    </main>
-    <x-footer/>
-@endsection
+            <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=<api-key>&callback=initMap">
+            </script>
+			
+            <script>
+                function showElement(){
+                    
+                }
+            </script>
+        </main>
+        <x-footer/>
+    @endsection
