@@ -1,4 +1,5 @@
 @extends('layouts.main')
+	@section('meta_description', 'О проекте DarkSky@Belastro.Net. Цель - помочь астрономам-любителям находить идеальные места для наблюдений. Платформа для поиска площадок, обмена опытом и развития сообщества')
     @section('content')
         <x-header/>
         <div class="about-page bg">

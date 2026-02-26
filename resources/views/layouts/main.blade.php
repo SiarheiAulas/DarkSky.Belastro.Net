@@ -3,22 +3,26 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author", content="Siarhei Aulas">
-        <meta name="author", content="Vitali Mechinski">
+        <meta name="author" content="Siarhei Aulas">
+        <meta name="author" content="Vitali Mechinski">
+	<meta name="description" content="@yield('meta_description', '"DarkSky@Belastro.Net - интерактивная карта для астрономов-любителей. Поиск мест с темным небом в Беларуси: фильтр по засветке, рельефу и доступности. Сообщество для обмена локациями')">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
         <title>{{ config('app.name', 'DarkSky@Belastro.Net') }}</title>
-
-        <!--Bootstrap-->
+	<meta property="og:title" content="@yield('title', config('app.name', 'DarkSky@Belastro.Net'))">
+	<meta property="og:description" content="@yield('meta_description', 'DarkSky@Belastro.Net - интерактивная карта наблюдательных площадок для любителей астрономии')">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="{{ url()->current() }}">
+	<meta property="og:image" content="{{ asset('img/og-image.png') }}">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<!--Bootstrap-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <!--Своя CSS-->
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
         <!--WYSIWYG-->
+	@auth()
         <script src="https://cdn.tiny.cloud/1/h5bg17bncqtbj1tvtaz3rzghm4qdyeyb65f5kd5jo56j5j9e/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js"></script>
+	@endauth
         <!--Favicon-->
         <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/favicon/favicon.ico')}}">
         <!--
@@ -35,7 +39,7 @@
     </head>
     <body class="bg-light">
             @yield('content')
-		<script>
+	<script>
 document.addEventListener('DOMContentLoaded', function() {
     const aside = document.getElementById('filtersAside');
         if (!aside) {

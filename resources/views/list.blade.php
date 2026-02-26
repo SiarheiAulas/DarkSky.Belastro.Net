@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('meta_description', 'База наблюдательных площадок для астрономии в Беларуси.')
     @section('content')
         <x-header/>
         <div class="about-page bg">

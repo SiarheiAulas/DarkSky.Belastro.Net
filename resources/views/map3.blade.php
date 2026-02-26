@@ -11,7 +11,7 @@
         myMapOptions = {
             center: minsk,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
-            zoom: 10,
+            zoom: 12,
             scrollwheel: true,
             mapTypeControl: false,
             zoomControl: true,
@@ -26,7 +26,7 @@
                 popupContent: '<div style="position: relative; padding-right: 20px;">' +
                               '<div class="title">{{$point->name}}</div>' +
                               '@isset($point->sqm)<div class="description">SQM={{$point->sqm}}<sup>m</sup>/"<sup>2</sup></div>@endisset' +
-                              '<div class="description">Рельеф: @isset($point->hills){{$point->hills}}@endisset @isset($point->plato){{$point->plato}}@endisset @isset($point->valley){{$point->valley}}@endisset</div>' +
+                              '<div class="description">Рельеф: @isset($point->hills){{$point->hills}}@endisset @isset($point->plato)Равнина @endisset @isset($point->valley){{$point->valley}}@endisset</div>' +
                               '<div class="description">Горизонт:@isset($point->south){{$point->south}};@endisset @isset($point->west){{$point->west}};@endisset @isset($point->north){{$point->north}};@endisset @isset($point->east){{$point->east}}@endisset</div>' +
                               '<div class="description">Транспорт: @isset($point->auto1){{$point->auto1}};@endisset @isset($point->auto2){{$point->auto2}};@endisset @isset($point->train){{$point->train}};@endisset @isset($point->bus){{$point->bus}}@endisset</div>' +
                               '<div class="description"><a href="{{Route('locations.show', $point->id)}}">Подробнее</a></div>' +
