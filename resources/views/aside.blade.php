@@ -109,16 +109,16 @@
     <div class="filtr" bis_skin_checked="1">
 	<div class="legend-header"><h5>Легенда</h5></div>
 	<div class="legend">
-		<div><img src="{{asset('img/3r.png')}}" alt="маркер Группа Infinity" width="25px" height="25px"> Группа Infinity</div>
-		<div><img src="{{asset('img/2r.png')}}" alt="маркер Клуб hv" width="25px" height="25px"> Клуб hv</div>
-		<div><img src="{{asset('img/6r.png')}}" alt="маркер Виктор Жук" width="15px" height="25px"> Виктор Жук</div>
-		<div><img src="{{asset('img/4r.png')}}" alt="маркер Группа Betelgeise" width="25px" height="25px"> Группа Betelgeise</div>
+		<div><img src="{{asset('img/3r.png')}}" alt="маркер Группа Infinity"> Группа Infinity</div>
+		<div><img src="{{asset('img/2r.png')}}" alt="маркер Клуб hv"> Клуб hv</div>
+		<div><img src="{{asset('img/6r.png')}}" alt="маркер Виктор Жук"> Виктор Жук</div>
+		<div><img src="{{asset('img/4r.png')}}" alt="маркер Группа Betelgeise"> Группа Betelgeise</div>
 	</div>
 	<div>
-		<div><img src="{{asset('img/1r.png')}}" alt="маркер Клуб Cirrus" width="19px" height="25px"> Клуб Cirrus</div>
-		<div><img src="{{asset('img/5r.png')}}" alt="маркер Иван Прокопюк" width="25px" height="25px"> Иван Прокопюк</div>
-		<div><img src="{{asset('img/7r.png')}}" alt="маркер Обсерватории" width="25px" height="25px"> Обсерватории</div>
-		<div><img src="{{asset('img/8r.png')}}" alt="маркер Astroplaces" width="30px" height="25px"> Astroplaces</div>
+		<div><img src="{{asset('img/1r.png')}}" alt="маркер Клуб Cirrus"> Клуб Cirrus</div>
+		<div><img src="{{asset('img/5r.png')}}" alt="маркер Иван Прокопюк"> Иван Прокопюк</div>
+		<div><img src="{{asset('img/7r.png')}}" alt="маркер Обсерватории"> Обсерватории</div>
+		<div><img src="{{asset('img/8r.png')}}" alt="маркер Astroplaces"> Astroplaces</div>
 	</div>
     </div>
     <script src="{{asset('js/distance.js')}}"></script>

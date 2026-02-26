@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('meta_description', 'Походы для поиска мест с темным небом в Беларуси')
     @section('content')
         <x-header/>
 		<div class="about-page bg">
